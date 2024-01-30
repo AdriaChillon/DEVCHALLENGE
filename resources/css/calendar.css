@@ -117,4 +117,15 @@
     background-color: #f0f8ff; /* Puedes ajustar el color según tus preferencias */
   }
 
+  footer {
+    bottom: 10px;
+    right: 10px;
+}
+
+/* Estilos para el footer con los botones */
+footer {
+  text-align: right;
+  padding: 10px;
+}
+
   

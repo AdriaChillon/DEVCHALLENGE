@@ -20,7 +20,7 @@ class EventController extends Controller
         $events = $user->events;
 
         // Pasa los eventos a la vista
-        return view('calendar', compact('events'));
+        return view('DEVCHALLENGE3/calendar', compact('events'));
     }
 
 

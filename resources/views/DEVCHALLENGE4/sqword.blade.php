@@ -14,8 +14,6 @@
         <div id="banner">
             <h1>SQWORD al Català</h1>
         </div>
-        <a href="/privada" class="btn btn-secondary" id="sortir">Sortir</a>
-
     </header>
 
     <div id="letra-actual">Lletra Actual</div>
@@ -54,7 +52,7 @@
                 </div>
             </div>
         </div>
-    </div>    
+    </div>
     <div id="resultado" class="resultado-oculto">
         <div class="resultado-header">
             <h2>Felicitats has finalitzat la teva partida!</h2>
@@ -69,11 +67,14 @@
         </div>
         <div class="historial-puntuaciones">
             <h4>Les teves útlimes 5 puntuacions:</h4>
-            <!-- Aquí puedes agregar el historial de puntuaciones -->
+            <div id="lista-puntuaciones"></div>
         </div>
     </div>
 </body>
 <footer>
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <div class="container">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+        <a href="{{ route('privada') }}" class="btn btn-secondary" id="sortir">Inici</a>
+    </div>
 </footer>
 </html>

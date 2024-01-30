@@ -130,6 +130,7 @@ function mostrarPuntuacion(puntuacion, palabrasEncontradas) {
     palabrasDiv.innerHTML = [...palabrasEncontradas].map(palabra => `<span class="palabra-adivinada">${palabra}</span>`).join(' ');
 
     resultadoDiv.classList.add('resultado-visible');
+    mostrarUltimasPuntuaciones();
 }
 
 function mostrarUltimasPuntuaciones() {
@@ -140,17 +141,18 @@ function mostrarUltimasPuntuaciones() {
     })
     .then(response => response.json())
     .then(scores => {
-        const scoresList = document.querySelector('.historial-puntuaciones');
-        scoresList.innerHTML = '<h4>Les teves útlimes 5 puntuacions:</h4>';
+        const scoresList = document.getElementById('lista-puntuaciones');
+        scoresList.innerHTML = ''; // Limpia el contenido anterior
 
         scores.forEach(score => {
             const scoreItem = document.createElement('div');
-            scoreItem.textContent = `Score: ${score.score}, Date: ${score.created_at}`;
+            scoreItem.textContent = `Puntuació: ${score.score} -  ${new Date(score.created_at).toLocaleDateString()}`;
             scoresList.appendChild(scoreItem);
         });
     })
     .catch(error => console.error('Error:', error));
 }
+
 
 function reiniciarJuego() {
     contador = 0;

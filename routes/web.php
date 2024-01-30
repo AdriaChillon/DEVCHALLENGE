@@ -29,9 +29,14 @@ Route::get('/google-auth', function () {
 });
 Route::get('/google-auth/callback',[LoginController::class, 'handleGoogleCallback']);
 
-Route::view('/', 'login')->name('login');
-Route::view('/registro', 'register')->name('registro');
-Route::view('/privada', 'secret')->middleware('auth')->name('privada');
+Route::view('/','DEVCHALLENGE1/portfolio')->name('portfolio');
+Route::view('/login', 'DEVCHALLENGE2/login')->name('login');
+Route::view('/registro', 'DEVCHALLENGE2/register')->name('registro');
+
+
+Route::view('/privada', 'DEVCHALLENGE1/secret')->middleware('auth')->name('privada');
+Route::view('/habilitats', 'DEVCHALLENGE1/habilitats')->name('habilitats');
+Route::view('/projectes', 'DEVCHALLENGE1/projectes')->name('projectes');
 
 
 Route::post("/validar-registro",[LoginController::class, 'register']) -> name('validar-registro');
@@ -39,7 +44,7 @@ Route::post("/inicia-sesion",[LoginController::class, 'login']) -> name('inicia-
 Route::get("/logout",[LoginController::class, 'logout']) -> name('logout');
 
 //VIEW DEL CALENDARIO
-Route::view('/calendar', 'calendar')->name('calendar');
+Route::view('/calendar', 'DEVCHALLENGE3/calendar')->name('calendar');
 
 //RUTAS CRUD CALENDARIO
 Route::get('/calendar', [EventController::class, 'showCalendar'])->middleware('auth')->name('calendar');
@@ -48,7 +53,7 @@ Route::put('/event/update/{id}', [EventController::class, 'update'])->name('even
 Route::delete('/event/destroy/{id}', [EventController::class, 'destroy'])->name('event.destroy');
 
 //VIEW SQWORD
-Route::view('/sqword','sqword')->name('sqword')->middleware('auth')->name('sqword');
+Route::view('/sqword','DEVCHALLENGE4/sqword')->middleware('auth')->name('sqword');
 
 Route::post('/score', [ScoreController::class, 'store'])->middleware('auth');
 Route::get('/scores/last-five', [ScoreController::class, 'getLastFiveScores'])->middleware('auth');
