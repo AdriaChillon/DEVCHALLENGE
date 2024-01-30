@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario de Registro</title>
+    <title>Formulari de Registre</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
@@ -29,30 +29,30 @@
 <body>
     <div class="container mt-5">
         <div class="register-container">
-            <h2>Registro</h2>
+            <h2>Registre</h2>
             @if ($errors->any())
                 <div class="alert alert-danger">
-                    Correo electrónico ya existente
+                    Correu electrònic ya existent
                 </div>
             @endif
             <form action="{{route('validar-registro')}}" method="POST">
                 @csrf
                 <div class="form-group">
-                    <label for="name">Nombre</label>
-                    <input type="text" class="form-control" id="name" name="name" placeholder="Ingresa tu nombre" required>
+                    <label for="name">Nom</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Insereix el teu nom" required>
                 </div>
                 <div class="form-group">
-                    <label for="email">Correo Electrónico</label>
-                    <input type="email" class="form-control" id="email" name="email" placeholder="Ingresa tu correo electrónico" required> 
+                    <label for="email">Correu Electrònic</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Insereix el teu correu electrònic" required> 
                 </div>
                 <div class="form-group">
-                    <label for="password">Contraseña</label>
-                    <input type="password" class="form-control" id="password" name="password" placeholder="Ingresa tu contraseña" required>
+                    <label for="password">Contrasenya</label>
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Insereix la teva contrasenya" required>
                 </div>
-                <button type="submit" class="btn btn-primary btn-block">Registrarse</button>
+                <button type="submit" class="btn btn-primary btn-block">Registrar-se</button>
             </form>
             <div class="login-link">
-                ¿Ya tienes una cuenta? <a href="{{route('login')}}">Inicia Sesión aquí</a>
+                ¿Ja tens un compte? <a href="{{route('login')}}">Inicia Sessió aquí</a>
             </div>
         </div>
     </div>

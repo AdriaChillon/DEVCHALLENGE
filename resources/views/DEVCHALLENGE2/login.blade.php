@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Formulario de Inicio de Sesión con Registro</title>
+        <title>Formulari de inici de sessió amb registre</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
         <style>
             body {
@@ -91,27 +91,27 @@
     <body>
         <div class="container mt-5">
             <div class="login-container">
-                <h2>Iniciar Sesión</h2>
+                <h2>Iniciar Sessió</h2>
                 @if ($errors->any())
                     <div class="alert alert-danger">
-                        Correo electrónico o contraseña incorrectos
+                        Correu electrònic o contrasenya incorrecta
                     </div>
                 @endif
                 <form action="{{ route('inicia-sesion') }}" method="POST">
                     @csrf
                     <div class="form-group">
-                        <label for="email">Correo Electrónico</label>
+                        <label for="email">Correu electrònic</label>
                         <input type="email" class="form-control" id="email" name="email"
-                            placeholder="Ingresa tu correo electrónico">
+                            placeholder="Insereix el teu correu electrònic">
                     </div>
                     <div class="form-group">
-                        <label for="password">Contraseña</label>
+                        <label for="password">Contrasenya</label>
                         <input type="password" class="form-control" id="password" name="password"
-                            placeholder="Ingresa tu contraseña">
+                            placeholder="Insereix la teva contrasenya">
                     </div>
-                    <button type="submit" class="btn btn-primary btn-block">Iniciar Sesión</button>
+                    <button type="submit" class="btn btn-primary btn-block">Inicia Sessió</button>
                     <div class="register-link">
-                        ¿No tienes una cuenta? <a href="{{ route('registro') }}">Regístrate aquí</a>
+                        ¿No tens compte? <a href="{{ route('registro') }}">Registrat aquí</a>
                     </div>
                 </form>
                 <div class="text-center">
