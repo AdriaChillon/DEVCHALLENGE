@@ -37,7 +37,7 @@
                 
                     <section class="aficion">
                         <h3 class="afi">Oci</h3>
-                        <img src="{{ asset('img/discoteca.jpg') }}">
+                        <img src="{{ asset('img/amigos.jpg') }}">
                     </section>
                 
                     <section class="aficion">

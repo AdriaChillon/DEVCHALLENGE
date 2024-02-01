@@ -4,11 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Modal } from 'bootstrap';
 
 // Lista de ejemplo de palabras en catalán
-const diccionarioCatalan = [
-    "casa", "gat", "sol", "arbre", "flor", "lluna", "estel", "cel", "mar", "riu",
-    // Añadir más palabras según sea necesario
-];
-
+var diccionarioCatalan;
 // Variables globales
 const letras = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 let letraActual = '';
@@ -16,8 +12,18 @@ let tablero = [];
 let contador = 0;
 
 document.addEventListener('DOMContentLoaded', () => {
+    cargarDiccionario();
     iniciarJuego();
 });
+
+function cargarDiccionario() {
+    fetch('/files/out.txt')
+        .then(response => response.text())
+        .then(contenido => {
+            diccionarioCatalan = contenido.split('\n').map(palabra => palabra.trim().toLowerCase());
+        })
+        .catch(error => console.error('Error al cargar el diccionario:', error));
+}
 
 function iniciarJuego() {
     inicializarTablero();
@@ -41,7 +47,18 @@ function inicializarTablero() {
 }
 
 function cambiarLetraActual() {
-    letraActual = letras[Math.floor(Math.random() * letras.length)];
+    let letraPonderada;
+
+    // Probabilidad de que sea vocal: 40%
+    if (Math.random() < 0.4) {
+        const vocales = 'AEIOU'.split('');
+        letraPonderada = vocales[Math.floor(Math.random() * vocales.length)];
+    } else {
+        // Probabilidad de que sea consonante: 60%
+        letraPonderada = letras[Math.floor(Math.random() * letras.length)];
+    }
+
+    letraActual = letraPonderada;
     document.getElementById('letra-actual').textContent = `Lletra Actual: ${letraActual}`;
 }
 
@@ -91,10 +108,12 @@ function buscarPalabrasEnLinea(linea, palabrasEncontradas) {
             let palabra = linea.slice(i, i + longitud).join('');
             if (esPalabraValida(palabra)) {
                 palabrasEncontradas.add(palabra);
+                console.log('Palabra encontrada:', palabra);
             }
         }
     }
 }
+
 
 function guardarPuntuacion(puntuacion) {
     fetch('/score', {
@@ -131,7 +150,11 @@ function mostrarPuntuacion(puntuacion, palabrasEncontradas) {
 
     resultadoDiv.classList.add('resultado-visible');
     mostrarUltimasPuntuaciones();
+
+    // Hacer scroll hacia abajo
+    resultadoDiv.scrollIntoView({ behavior: 'smooth', block: 'end' });
 }
+
 
 function mostrarUltimasPuntuaciones() {
     fetch('/scores/last-five', {
