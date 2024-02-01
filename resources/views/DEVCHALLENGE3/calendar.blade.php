@@ -134,7 +134,6 @@
                         id="deleteForm">
                         @csrf
                         @method('DELETE')
-
                         <!-- Camp ocult per emmagatzemar l'ID de l'esdeveniment -->
                         <input type="hidden" name="event_id" id="event_id" value="">
 

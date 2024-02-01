@@ -1,131 +1,175 @@
+html, body {
+  height: 100%; /* Asegura que el cuerpo de la página sea al menos del alto de la pantalla */
+  margin: 0;
+  padding: 0;
+}
+
+#calendar {
+  min-height: 100vh; /* Usa la altura del viewport para móviles */
+  overflow-y: auto; /* Permite desplazamiento si el contenido es más largo que la pantalla */
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+}
 
 /* Anular estilos de enlace de Bootstrap en FullCalendar */
-#calendar a {
-    color: inherit !important;
-    text-decoration: none !important;
-  }
-  
-  /* Anular estilos de enlace para los números de los días en FullCalendar */
-  #calendar .fc-daygrid-day a {
-    color: inherit !important;
-    text-decoration: none !important;
-  }
-  /* Estilos generales */
-  #top {
-    background: #eee;
-    border-bottom: 1px solid #ddd;
-    padding: 0 10px;
-    line-height: 40px;
-    font-size: 12px;
-  }
-  
-  /* Estilos del calendario */
-  #calendar {
-    font-family: 'Arial', sans-serif;
-    background-color: #f8f9fa;
-    border-radius: 10px;
-  }
-  
-  /* Encabezado del calendario */
-  .fc-header-toolbar {
-    background-color: #343a40;
-    color: #ffffff;
-    border-radius: 10px 10px 0 0;
-  }
-  
-  .fc-header-toolbar button {
-    color: #ffffff !important;
-  }
-  
-  /* Botones de cambio de vista */
-  .fc-button-group button {
-    background-color: #6c757d;
-    border-color: #6c757d;
-    color: #ffffff !important;
-  }
-  
-  .fc-button-group button:hover {
-    background-color: #495057;
-    border-color: #495057;
-  }
-  
-  /* Días de la semana */
-  .fc-day-header {
-    background-color: #343a40;
-    color: #ffffff;
-  }
-  
-  /* Días del mes */
-  .fc-day {
-    border: 1px solid #ced4da;
-    background-color: #ffffff;
-  }
-  
-  /* Días seleccionados */
-  .fc-day.fc-day-selected {
-    background-color: #007bff;
-    color: #ffffff;
-  }
-  
-  /* Modal de evento */
-  .modal-content {
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Inputs en el modal de evento */
-  .modal-content input,
-  .modal-content textarea {
-    border: 1px solid #ced4da;
-    border-radius: 5px;
-  }
-  
-  /* Botones en el modal de evento */
-  .modal-content button {
-    border-radius: 5px;
-  }
-  
-  /* Botones Primarios en el modal de evento */
-  .modal-content button.btn-primary {
-    background-color: #007bff;
-    border-color: #007bff;
-  }
-  
-  .modal-content button.btn-primary:hover {
-    background-color: #0056b3;
-    border-color: #004080;
-  }
-  
-  /* Botones Secundarios en el modal de evento */
-  .modal-content button.btn-secondary {
-    background-color: #6c757d;
-    border-color: #6c757d;
-  }
-  
-  .modal-content button.btn-secondary:hover {
-    background-color: #495057;
-    border-color: #495057;
-  }
-  /* Días del mes - Hover */
-  .fc-day:hover {
-    background-color: #f0f8ff; /* Puedes ajustar el color según tus preferencias */
-  }
-  
-  /* Días de la semana - Hover */
-  .fc-day:hover {
-    background-color: #f0f8ff; /* Puedes ajustar el color según tus preferencias */
-  }
+#calendar a,
+#calendar .fc-daygrid-day a {
+  color: inherit !important;
+  text-decoration: none !important;
+}
 
-  footer {
-    bottom: 10px;
-    right: 10px;
+/* Estilos generales */
+#top {
+  background: #eee;
+  border-bottom: 1px solid #ddd;
+  padding: 0 10px;
+  line-height: 40px;
+  font-size: 12px;
+}
+
+/* Encabezado del calendario */
+.fc-header-toolbar {
+  background-color: #343a40;
+  color: #ffffff;
+  border-radius: 10px 10px 0 0;
+}
+
+.fc-header-toolbar button,
+.fc-button-group button {
+  color: #ffffff !important;
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+
+.fc-button-group button:hover {
+  background-color: #495057;
+  border-color: #495057;
+}
+
+/* Días de la semana y días del mes */
+.fc-day-header,
+.fc-day {
+  background-color: #ffffff;
+  color: #333;
+}
+
+.fc-day {
+  border: 1px solid #ced4da;
+}
+
+.fc-day.fc-day-selected {
+  background-color: #007bff;
+  color: #ffffff;
+}
+
+/* Modal de evento */
+.modal-content {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Inputs y botones en el modal de evento */
+.modal-content input,
+.modal-content textarea,
+.modal-content button {
+  border-radius: 5px;
+}
+
+.modal-content button.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.modal-content button.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #004080;
+}
+
+.modal-content button.btn-secondary {
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+
+.modal-content button.btn-secondary:hover {
+  background-color: #495057;
+  border-color: #495057;
+}
+
+/* Hover sobre días */
+.fc-day:hover {
+  background-color: #f0f8ff;
 }
 
 /* Estilos para el footer con los botones */
 footer {
   text-align: right;
   padding: 10px;
+  bottom: 10px;
+  right: 10px;
 }
 
-  
+/* Estilos Responsive */
+@media only screen and (max-width: 768px) {
+  /* Estilos para tablets */
+  .fc-header-toolbar {
+    padding: 5px;
+  }
+
+  .fc-header-toolbar button {
+    font-size: 14px;
+  }
+
+  .fc-day {
+    padding: 8px;
+  }
+
+  .fc-day-header,
+  .fc-day {
+    font-size: 14px;
+  }
+
+  .modal-content {
+    padding: 10px;
+  }
+
+  .modal-content input,
+  .modal-content textarea {
+    font-size: 14px;
+  }
+
+  footer {
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  /* Estilos para móviles */
+  .fc-header-toolbar button {
+    font-size: 12px;
+  }
+
+  .fc-day {
+    padding: 5px;
+  }
+
+  .fc-day-header,
+  .fc-day {
+    font-size: 12px;
+  }
+
+  .modal-content {
+    margin: 10px;
+    width: auto; /* Permite que el modal se ajuste a la pantalla */
+  }
+
+  .modal-content button {
+    padding: 10px 15px; /* Tamaño más grande para facilidad de toque */
+    font-size: 14px;
+  }
+
+  footer {
+    padding: 5px;
+  }
+}
