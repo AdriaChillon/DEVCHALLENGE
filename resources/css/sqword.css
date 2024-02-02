@@ -1,75 +1,201 @@
-/* Estilo base para el documento */
 body {
     font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    height: auto;
     margin: 0;
-    background-color: #f5f5f5;
-    color: #333;
+    background-color: #f5f5f5; /* Fondo ligeramente gris claro */
 }
-
-/* Estilos del banner principal */
+/* Estilos para pantallas medianas (tabletas) */
+@media screen and (max-width: 768px) {
+    #banner, #tablero, #modal .modal-content, .resultado-oculto, .resultado-visible {
+        width: 90%; /* Reduce el ancho para adaptarse a pantallas más pequeñas */
+        margin: 10px;
+    }
+    #tablero {
+        grid-template-columns: repeat(5, 1fr); /* Columnas más flexibles */
+        gap: 3px; /* Espacio más pequeño entre celdas */
+    }
+    .casella {
+        width: auto; /* Tamaño automático para adaptarse a la nueva configuración de la cuadrícula */
+        height: auto;
+    }
+    #modal {
+        width: 95%; /* Aumentar el ancho del modal para dispositivos más pequeños */
+    }
+}
+/* Estilos para pantallas pequeñas (móviles) */
+@media screen and (max-width: 480px) {
+    #banner {
+        padding: 10px; /* Reducir el relleno para pantallas pequeñas */
+    }
+    #sortir {
+        padding: 5px 10px; /* Reducir el relleno del botón */
+        font-size: 0.8em; /* Reducir el tamaño de la fuente */
+    }
+    #tablero {
+        grid-template-columns: repeat(3, 1fr); /* Reducir el número de columnas para el tablero */
+    }
+    #instruccions, #modal .btn-secondary {
+        padding: 5px 10px; /* Reducir el relleno */
+        font-size: 0.8em; /* Reducir el tamaño de la fuente */
+    }
+}
 #banner {
+    position: relative; /* Necesario para el posicionamiento absoluto del botón dentro del banner */
     text-align: center;
-    background-color: #333;
-    color: #fff;
+    background-color: #333; /* Gris oscuro */
+    color: #fff; /* Texto blanco */
     padding: 20px;
     margin-bottom: 20px;
+    border-bottom: 2px solid #222; /* Borde inferior más oscuro */
 }
-
-/* Estilos del botón 'sortir' */
 #sortir {
-    position: fixed; /* Posicionamiento fijo para que sea siempre accesible */
-    right: 10px;
-    top: 10px;
-    padding: 5px 10px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 1em; /* Tamaño de fuente estándar */
+    position: absolute; /* Posicionamiento absoluto respecto al banner */
+    right: 20px; /* Ajusta la distancia desde el borde derecho */
+    top: 20px; /* Ajusta la distancia desde la parte superior */
+    padding: 10px 20px; /* Espaciado interno */
+    text-decoration: none; /* Eliminar el subrayado del enlace */
+    border: none; /* Eliminar el borde */
+    border-radius: 5px; /* Bordes redondeados */
 }
-
-/* Estilos del tablero de juego */
 #tablero {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); /* Grid adaptable */
-    gap: 5px;
-    width: 100%;
-    max-width: 400px; /* Ancho máximo del tablero */
-    margin: auto; /* Centrado automático dentro del contenedor padre */
+    grid-template-columns: repeat(5, 80px); /* Ajusta el tamaño según tus necesidades */
+    grid-template-rows: repeat(5, 80px); /* Ajusta el tamaño según tus necesidades */
+    gap: 5px; /* Espacio entre celdas */
 }
-
-/* Estilos de las celdas del tablero */
 .casella {
-    border: 2px solid #555;
+    width: 80px; /* Ajusta el tamaño de la celda según tus necesidades */
+    height: 80px; /* Ajusta el tamaño de la celda según tus necesidades */
+    border: 2px solid #555; /* Borde gris oscuro */
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #eee;
-    transition: background-color 0.3s ease; /* Transición suave para el hover */
+    background-color: #eee; /* Color de fondo gris claro */
+    color: #333; /* Texto gris oscuro */
+    font-weight: bold;
+    transition: background-color 0.3s ease; /* Transición suave del color de fondo */
 }
-
-/* Efecto al pasar el ratón sobre las celdas */
 .casella:hover {
-    background-color: #555;
-    color: #fff;
+    background-color: #555; /* Cambia el color de fondo al gris oscuro al pasar el ratón */
+    color: #fff; /* Cambia el color del texto a blanco al pasar el ratón */
 }
-
-/* Estilos Responsive para móviles */
-@media (max-width: 480px) {
-    #banner, #modal .modal-content, .resultado-oculto, .resultado-visible, footer {
-        width: 90%;
-        margin: 10px auto;
-    }
-
-    #tablero {
-        grid-template-columns: repeat(3, 1fr); /* 3 columnas para móviles */
-    }
-
-    #sortir {
-        padding: 5px 10px;
-        font-size: 0.8em; /* Tamaño de fuente reducido para móviles */
-    }
+#letra-actual, #proxima-letra {
+    width: 150px; /* Ajusta el tamaño de la casilla de letra según tus necesidades */
+    height: 40px; /* Ajusta el tamaño de la casilla de letra según tus necesidades */
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #eee; /* Color de fondo gris claro */
+    color: #333; /* Texto gris oscuro */
+    font-size:large;
 }
-
-/* Manteniendo la estética del diseño original con una estructura de código optimizada */
+#lletra {
+    visibility: hidden;
+}
+/* Estilos para el botón de instrucciones */
+#instruccions {
+    background-color: #333; /* Gris oscuro */
+    color: #fff; /* Texto blanco */
+    padding: 10px 20px; /* Espaciado interno */
+    font-size: 16px; /* Tamaño de fuente */
+    border: none; /* Sin borde */
+    cursor: pointer; /* Cambia el cursor al pasar el ratón */
+    transition: background-color 0.3s ease; /* Transición suave del color de fondo */
+    margin-top: 20px; /* Ajuste de margen superior */
+}
+#instruccions:hover {
+    background-color: #555; /* Cambia el color de fondo al gris más oscuro al pasar el ratón */
+}
+/* Estilos para el modal */
+#modal {
+    display: none; /* Inicialmente oculto */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 400px; /* Ancho máximo del contenido del modal */
+    height: min-content;
+}
+#modal .modal-content {
+    background-color: #f0f0f0; /* Gris oscuro */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    color: #fff; /* Texto blanco */
+    text-align: justify; /* Texto justificado */
+    font-family: 'Arial', sans-serif; /* Font-family modificado */
+}
+#modal .modal-title {
+    margin-bottom: 15px;
+    font-size: 1.5em;
+    color: #000000; /* Texto blanco */
+    font-family:'Times New Roman', Times, serif;
+    font-weight: bold; 
+}
+#modal .modal-body {
+    letter-spacing: 0;
+    font-family: monospace;
+    font-size: 1em;
+    color: #000000; /* Texto gris claro */
+}
+#modal .modal-footer {
+    margin-top: 15px;
+    text-align: center;
+}
+#modal .btn-secondary {
+    background-color: #333;
+    color: #fff; /* Texto blanco */
+    padding: 10px 20px; /* Espaciado interno */
+    font-size: 16px; /* Tamaño de fuente */
+    border: none; /* Sin borde */
+    cursor: pointer; /* Cambia el cursor al pasar el ratón */
+    transition: background-color 0.3s ease; /* Transición suave del color de fondo */
+    border-radius: 5px; /* Bordes redondeados */
+}
+#modal .btn-secondary:hover {
+    background-color: #424141; /* Cambia el color de fondo al azul más oscuro al pasar el ratón */
+}
+.resultado-oculto {
+    display: none;
+    background-color: #f8f9fa;
+    color: #333;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+.resultado-visible {
+    display: block;
+}
+.resultado-header, .resultado-body, .palabras-container, .historial-puntuaciones {
+    margin-bottom: 15px;
+}
+#compartir-puntuacion {
+    margin-top: 10px;
+}
+.palabras-container h3, .historial-puntuaciones h4 {
+    color: #666;
+}
+#palabras-adivinadas {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+}
+footer {
+    bottom: 10px;
+    right: 10px;
+}
+/* Estilos para el footer con los botones */
+footer {
+  text-align: right;
+  padding: 10px;
+}

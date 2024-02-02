@@ -1,3 +1,6 @@
+/* Importar Bootstrap localmente desde node_modules */
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
