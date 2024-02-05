@@ -11,9 +11,9 @@
     <div id="app">
         <nav>
             <ul>
-                <li><a href="{{route('portfolio')}}" class="menu">Informació Personal</a></li>
-                <li><a href="{{route('habilitats')}}" class="menu">Habilitats/Aficions</a></li>
-                <li><a href="{{route('projectes')}}" class="menu">Projectes</a></li>
+                <li><a href="{{route('portfolio')}}" class="menu">Información Personal</a></li>
+                <li><a href="{{route('habilitats')}}" class="menu">Habilidades/Aficiones</a></li>
+                <li><a href="{{route('projectes')}}" class="menu">Proyectos</a></li>
             </ul>
         </nav>
 

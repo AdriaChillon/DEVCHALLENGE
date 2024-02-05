@@ -7,7 +7,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Projectes</title>
+        <title>Proyectos</title>
         @vite(['resources/css/portfoli.css'])
     </head>
 
@@ -22,7 +22,7 @@
                 </div>
 
                 <div class="proyecto" data-lenguaje="JavaScript">
-                    <h3><a href="{{ route('privada') }}">DEVCHALLENGE1 - PortFoli</a></h3>
+                    <h3><a href="{{ route('privada') }}">DEVCHALLENGE1 - PortFolio</a></h3>
                     <p>Lenguaje: JavaScript</p>
                 </div>
 
@@ -31,7 +31,7 @@
                     <p>Lenguaje: PHP</p>
                 </div>
                 <div class="proyecto" data-lenguaje="PHP">
-                    <h3><a href="{{ route('calendar') }}">DEVCHALLENGE3 - CALENDAR</h3>
+                    <h3><a href="{{ route('calendar') }}">DEVCHALLENGE3 - CALENDARIO</h3>
                     <p>Lenguaje: PHP</p>
                 </div>
                 <div class="proyecto" data-lenguaje="JavaScript">

@@ -2,15 +2,23 @@ import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
 
 export default defineConfig({
-    plugins: [
-        laravel({
-            input: ['resources/css/app.css', 'resources/js/app.js', 'resources/js/calendar.js',
-             'resources/css/calendar.css', 'resources/js/sqword.js', 'resources/css/sqword.css', 
-             'resources/css/navbar.css', 'resources/css/portfoli.css', 'resources/js/bootstrap.js',
-             '/resources/views/portfolio/assets/js/functions.js','/resources/views/portfolio/assets/css/main.css'],
-             'resources/css/navbar.css', 'resources/css/portfoli.css', 'resources/js/bootstrap.js'
-             ,'resources/js/dev5.js'],
-            refresh: true,
-        }),
-    ],
+  plugins: [
+    laravel({
+      input: [
+        'resources/css/app.css',
+        'resources/js/app.js',
+        'resources/js/calendar.js',
+        'resources/css/calendar.css',
+        'resources/js/sqword.js',
+        'resources/css/sqword.css',
+        'resources/css/navbar.css',
+        'resources/css/portfoli.css',
+        'resources/css/game.css',
+        'resources/js/bootstrap.js',
+        '/resources/views/portfolio/assets/js/functions.js',
+        '/resources/views/portfolio/assets/css/main.css'
+      ],
+    }),
+  ],
+  refresh: true,
 });
