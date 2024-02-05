@@ -20,7 +20,7 @@
         <div class="portfolio-links">
             <a href="{{ route('calendar') }}" class="portfolio-link">Calendari</a>
             <a href="{{ route('sqword') }}" class="portfolio-link">SQWORD CATALÀ</a>
-            <a href="{{ route('portfolio') }}" class="portfolio-link">PEDRA PAPER</a>
+            <a href="{{ route('game') }}" class="portfolio-link">PEDRA PAPER</a>
         </div>
     </main>
     <footer class="bg-dark text-white text-center py-2 mt-4">

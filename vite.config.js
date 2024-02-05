@@ -6,7 +6,8 @@ export default defineConfig({
         laravel({
             input: ['resources/css/app.css', 'resources/js/app.js', 'resources/js/calendar.js',
              'resources/css/calendar.css', 'resources/js/sqword.js', 'resources/css/sqword.css', 
-             'resources/css/navbar.css', 'resources/css/portfoli.css', 'resources/js/bootstrap.js'],
+             'resources/css/navbar.css', 'resources/css/portfoli.css', 'resources/js/bootstrap.js'
+             ,'resources/js/dev5.js'],
             refresh: true,
         }),
     ],

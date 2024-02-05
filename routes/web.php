@@ -57,3 +57,6 @@ Route::view('/sqword','DEVCHALLENGE4/sqword')->middleware('auth')->name('sqword'
 
 Route::post('/score', [ScoreController::class, 'store'])->middleware('auth');
 Route::get('/scores/last-five', [ScoreController::class, 'getLastFiveScores'])->middleware('auth');
+
+//VIEW GAME
+Route::view('/game', 'DEVCHALLENGE5/dev5')->middleware('auth')->name('game');

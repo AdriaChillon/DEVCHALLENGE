@@ -35,6 +35,7 @@ body {
     #sortir {
         padding: 5px 10px; /* Reducir el relleno del botón */
         font-size: 0.8em; /* Reducir el tamaño de la fuente */
+        position: absolute;
     }
     #tablero {
         grid-template-columns: repeat(3, 1fr); /* Reducir el número de columnas para el tablero */
