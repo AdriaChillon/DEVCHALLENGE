@@ -28,7 +28,7 @@
                         <div class="form-group">
                             <label for="name">Nom:</label>
                             <input type="text" class="form-control" name="name" id="name"
-                                aria-describedby="helpId" placeholder="Escriu el títol">
+                                aria-describedby="helpId" placeholder="Escriu el títol" required>
                         </div>
                         <div class="form-group">
                             <label for="description">Descripció</label>
