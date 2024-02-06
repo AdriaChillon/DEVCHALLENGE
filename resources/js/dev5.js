@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
 
     function connectWebSocket() {
-        conn = new WebSocket('ws://217.160.248.11:8080');
+        conn = new WebSocket('ws://217.160.248.11:6001');
 
         conn.onopen = function(e) {
             console.log("Conexión establecida!");
