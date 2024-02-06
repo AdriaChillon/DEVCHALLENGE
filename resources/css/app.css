@@ -67,6 +67,9 @@ p {
     .d-flex div {
         flex: 0 0 100%; /* Ajuste para pantalla pequeña, cada div toma el ancho completo */
     }
+    .footer {
+        position: relative; /* O simplement deixa-ho fora per defecte, que és 'static' */
+    }
 }
 
 footer {

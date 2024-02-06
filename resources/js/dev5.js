@@ -1,5 +1,6 @@
+var conn;
 document.addEventListener('DOMContentLoaded', function() {
-    var conn; // Variable global para la conexión WebSocket
+    
     const rulesDescription = {
         'tijeras cortan papel': ['tijeras', 'papel'],
         'papel cubre piedra': ['papel', 'piedra'],
@@ -16,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
 
     function connectWebSocket() {
-        var conn = new WebSocket('ws://adriadevchallenge.duckdns.org/ws');
+        conn = new WebSocket('ws://adriadevchallenge.duckdns.org/ws');
 
         conn.onopen = function(e) {
             console.log("Conexión establecida!");
