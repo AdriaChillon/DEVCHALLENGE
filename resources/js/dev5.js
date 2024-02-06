@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
 
     function connectWebSocket() {
-        conn = new WebSocket('ws://adriadevchallenge.duckdns.org/ws');
+        conn = new WebSocket('ws://adriadevchallenge.duckdns.org:8080/ws');
 
         conn.onopen = function(e) {
             console.log("Conexión establecida!");
