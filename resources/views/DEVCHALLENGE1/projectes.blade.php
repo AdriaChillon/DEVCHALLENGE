@@ -39,7 +39,7 @@
                     <p>Lenguaje: JavaScript</p>
                 </div>
                 <div class="proyecto" data-lenguaje="JavaScript">
-                    <h3><a href="{{ route('game') }}">DEVCHALLENGE5 - PIEDRA PAPEL</h3>
+                    <h3><a href="{{ route('game') }}">DEVCHALLENGE5 - PIEDRA PAPEL TIJERAS LAGARTO SPOCK</h3>
                     <p>Lenguaje: JavaScript</p>
                 </div>
             </div>
