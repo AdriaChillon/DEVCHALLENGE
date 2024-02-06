@@ -15,6 +15,7 @@ export default defineConfig({
         'resources/css/portfoli.css',
         'resources/css/game.css',
         'resources/js/bootstrap.js',
+        'resources/js/dev5.js',
       ],
     }),
   ],
