@@ -22,7 +22,7 @@
                 </div>
 
                 <div class="proyecto" data-lenguaje="JavaScript">
-                    <h3><a href="{{ route('privada') }}">DEVCHALLENGE1 - PortFolio</a></h3>
+                    <h3><a href="/">DEVCHALLENGE1 - PORTFOLIO</a></h3>
                     <p>Lenguaje: JavaScript</p>
                 </div>
 

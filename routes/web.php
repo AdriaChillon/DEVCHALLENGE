@@ -30,7 +30,7 @@ Route::get('/google-auth', function () {
 Route::get('/google-auth/callback',[LoginController::class, 'handleGoogleCallback']);
 
 Route::view('/','DEVCHALLENGE1/portfolio')->name('portfolio');
-// Route::view('/','global-master/portafolio')->name('portafolio');
+Route::view('/portafolio','portafolio')->name('portafolio');
 
 Route::view('/login', 'DEVCHALLENGE2/login')->name('login');
 Route::view('/registro', 'DEVCHALLENGE2/register')->name('registro');

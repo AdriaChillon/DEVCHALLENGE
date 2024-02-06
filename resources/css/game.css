@@ -14,7 +14,22 @@ h1, h2, h3 {
     padding: 15px;
     text-align: center;
     margin-bottom: 20px;
+    position: relative; /* Añadido para posicionar el botón #sortir correctamente */
 }
+
+#sortir {
+    position: absolute; /* Posicionamiento absoluto respecto al contenedor .banner */
+    right: 20px; /* Ajusta la distancia desde el borde derecho del contenedor .banner */
+    top: 20px; /* Ajusta la distancia desde la parte superior del contenedor .banner */
+    padding: 10px 20px; /* Espaciado interno */
+    text-decoration: none; /* Eliminar el subrayado del enlace */
+    border: none; /* Eliminar el borde */
+    border-radius: 5px; /* Bordes redondeados */
+    background-color: #6c757d; /* Color de fondo */
+    color: #fff; /* Color de texto */
+    cursor: pointer; /* Cambiar el cursor a puntero */
+}
+
 
 #user-name {
     margin-top: 10px;
